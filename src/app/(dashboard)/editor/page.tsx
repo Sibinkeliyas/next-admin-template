@@ -6,8 +6,6 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 const breadcrumbItems = [{ title: 'Lexical editor', link: '/dashboard/editor' }];
 
-
-
 export default async function page() {
 
   return (

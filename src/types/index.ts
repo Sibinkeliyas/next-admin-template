@@ -1,4 +1,5 @@
 import { Icons } from '@/components/icons';
+import { AuthProps } from './auth';
 
 export interface NavItem {
   title: string;
@@ -30,3 +31,8 @@ export interface FooterItem {
 export type MainNavItem = NavItemWithOptionalChildren;
 
 export type SidebarNavItem = NavItemWithChildren;
+
+
+export type DefaultRootStateProps = {
+  userProfile: AuthProps
+};
