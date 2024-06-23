@@ -9,7 +9,7 @@ export default function GoogleSignInButton() {
       className="w-full"
       variant="outline"
       type="button"
-      onClick={() => console.log('click')}
+      // onClick={() => console.log('click')}
     >
       <Icons.gitHub className="mr-2 h-4 w-4" />
       Continue with Github

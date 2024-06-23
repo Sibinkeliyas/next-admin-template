@@ -1,10 +1,12 @@
 export type UserProps = {
   id: number;
+  name: string;
   email: string;
 };
 
 export type AuthProps = {
   error?: null | string;
-  isAuthenticated: boolean
+  isInitialized: boolean;
+  isAuthenticated: boolean;
   user: null | UserProps;
 };

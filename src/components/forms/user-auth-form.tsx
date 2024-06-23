@@ -13,9 +13,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-import { login } from '@/utils/api/authentication';
 import { useRouter } from 'next/navigation';
 import { useToast } from '../ui/use-toast';
+import { userLogin } from '@/context/jwtContext';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Enter a valid email address' }),
@@ -39,8 +39,8 @@ export default function UserAuthForm() {
 
   const onSubmit = async (data: UserFormValue) => {
     window.origin
-    const res =  await login(data.email, data.password);
-    if(res.status) router.push('/dashboard')
+    const res = await userLogin(data.email, data.password);
+    if(res.status) router.push('/')
     else
       toast({
         variant: 'destructive',

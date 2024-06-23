@@ -20,7 +20,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Trash } from 'lucide-react';
-import { useParams, useRouter } from 'next/navigation';
+import {  useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
@@ -63,14 +63,14 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
   initialData,
   categories
 }) => {
-  const params = useParams();
+  // const params = useParams();
   const router = useRouter();
   const { toast } = useToast();
-  const [open, setOpen] = useState(false);
+  const [, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const title = initialData ? 'Edit product' : 'Create product';
   const description = initialData ? 'Edit a product.' : 'Add a new product';
-  const toastMessage = initialData ? 'Product updated.' : 'Product created.';
+  // const toastMessage = initialData ? 'Product updated.' : 'Product created.';
   const action = initialData ? 'Save changes' : 'Create';
 
   const defaultValues = initialData
@@ -115,20 +115,20 @@ export const EmployeeForm: React.FC<ProductFormProps> = ({
     }
   };
 
-  const onDelete = async () => {
-    try {
-      setLoading(true);
-      //   await axios.delete(`/api/${params.storeId}/products/${params.productId}`);
-      router.refresh();
-      router.push(`/${params.storeId}/products`);
-    } catch (error: any) {
-    } finally {
-      setLoading(false);
-      setOpen(false);
-    }
-  };
+  // const onDelete = async () => {
+  //   try {
+  //     setLoading(true);
+  //     //   await axios.delete(`/api/${params.storeId}/products/${params.productId}`);
+  //     router.refresh();
+  //     router.push(`/${params.storeId}/products`);
+  //   } catch (error: any) {
+  //   } finally {
+  //     setLoading(false);
+  //     setOpen(false);
+  //   }
+  // };
 
-  const triggerImgUrlValidation = () => form.trigger('imgUrl');
+  // const triggerImgUrlValidation = () => form.trigger('imgUrl');
 
   return (
     <>

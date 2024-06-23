@@ -1,5 +1,6 @@
 import Header from '@/components/layout/header';
 import Sidebar from '@/components/layout/sidebar';
+import AuthGuard from '@/utils/routeGuard/AuthGuard';
 
 
 export default function DashboardLayout({
@@ -8,12 +9,12 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <AuthGuard>
       <Header />
       <div className="flex h-screen overflow-hidden">
         <Sidebar />
         <main className="flex-1 overflow-hidden pt-16">{children}</main>
       </div>
-    </>
+    </AuthGuard>
   );
 }

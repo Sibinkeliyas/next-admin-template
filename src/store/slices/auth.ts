@@ -8,8 +8,9 @@ import { createSlice } from '@reduxjs/toolkit';
 // initial state
 const initialState: DefaultRootStateProps['userProfile'] = {
   error: null,
+  isInitialized: false,
   isAuthenticated: false,
-  user : null
+  user: null
 };
 
 // ==============================|| SLICE - AUTHENTICATION ||============================== //
@@ -22,11 +23,13 @@ const authentication = createSlice({
     hasError(state, action) {
       state.error = action.payload;
     },
-    userLogin: (state, action) => {
+    userLoginSuccess: (state, action) => {
+      state.isInitialized = true
       state.isAuthenticated = true;
       state.user = action.payload;
     },
-    userLogout: (state) => {
+    userLogoutSuccess: (state) => {
+      state.isInitialized = true
       state.isAuthenticated = false;
       state.user = null;
     }
@@ -35,5 +38,7 @@ const authentication = createSlice({
 
 export default authentication.reducer;
 
-export const { userLogin, userLogout } = authentication.actions;
+export const { userLoginSuccess, userLogoutSuccess, hasError } = authentication.actions;
+
+
 

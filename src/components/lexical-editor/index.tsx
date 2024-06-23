@@ -5,7 +5,7 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
-import TreeViewPlugin from './plugins/TreeViewPlugin';
+// import TreeViewPlugin from './plugins/TreeViewPlugin';
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 import { ListPlugin } from '@lexical/react/LexicalListPlugin';
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin';
@@ -20,7 +20,7 @@ import AutoLinkPlugin from './plugins/AutoLinkPlugin';
 import OnchangePlugin from './plugins/OnchangePlugin';
 import { editorConfig } from './config';
 import ImagesPlugin from './plugins/ImagePlugin';
-import { LexicalEditor } from 'lexical';
+// import { LexicalEditor } from 'lexical';
 import { SetInitialValuePlugin } from './plugins/SetInitialValuePlugin';
 import dynamic from 'next/dynamic';
 // import sampleText from './sampleText'
