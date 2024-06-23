@@ -16,7 +16,6 @@ import * as z from 'zod';
 import { login } from '@/utils/api/authentication';
 import { useRouter } from 'next/navigation';
 import { useToast } from '../ui/use-toast';
-import { signIn } from 'next-auth/react';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Enter a valid email address' }),
@@ -39,21 +38,15 @@ export default function UserAuthForm() {
   });
 
   const onSubmit = async (data: UserFormValue) => {
-    const res = await signIn('credentials' , {
-      email: data.email,
-      password: data.password,
-      redirect : false
-    })
-    console.log(res);
-    
-    // const res =  await login(data.email, data.password);
-    // if(res.status) router.push('/dashboard')
-    // else
-    //   toast({
-    //     variant: 'destructive',
-    //     title: 'Uh oh! Something went wrong.',
-    //     description: 'There was a problem with your request.'
-    //   });
+    window.origin
+    const res =  await login(data.email, data.password);
+    if(res.status) router.push('/dashboard')
+    else
+      toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: 'There was a problem with your request.'
+      });
   };
 
   return (
